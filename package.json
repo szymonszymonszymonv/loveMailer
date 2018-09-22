@@ -2,7 +2,7 @@
   "name": "lovemailer",
   "version": "1.0.0",
   "description": "send an email to a loved one",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "\t"
   },
