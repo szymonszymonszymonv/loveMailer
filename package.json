@@ -16,8 +16,5 @@
     "node"
   ],
   "author": "Szymon Prokopiuk",
-  "license": "ISC",
-  "dependencies": {
-    "nodemailer": "^4.6.8"
-  }
+  "license": "ISC"
 }
