@@ -1,6 +1,5 @@
 'use strict'
 var nodemailer = require('nodemailer')
-console.log(nodemailer)
 var love = {
   config: {
     service: 'gmail', // your service
@@ -10,22 +9,29 @@ var love = {
     }
   },
 
-  mailOptions: {
-    from: 'secret', // you
-    to: 'secret', // your loved one
-    subject: 'love',
-    text: this.generateMessage()
+  mailOpts: function () {
+    var text = this.generateMessage()
+    var options = {
+      from: 'secret', // you
+      to: 'secret', // your loved one
+      subject: 'love',
+      text: text
+    }
+    return options
   },
 
-  transporterConstruct: function () { // create transporter object based on configs
+  TransporterConstruct: function () { // create transporter object based on configs
     var config = this.config
     return nodemailer.createTransport(config)
   },
 
-  transporter: this.transporterConstruct(),
+  transporter: function () {
+    return this.transporterConstruct()
+  },
+
   anniversary: {
 
-    date: new Date(/* year, month(0-11 not 1-12), day */), // start
+    date: new Date(), // start
     currentDate: new Date(),
 
     length: function () { // returns length in months, use it as u wish
@@ -49,16 +55,16 @@ var love = {
   messages: [],
 
   createMessage: function (string) { // create multiple messages so that you can use one of them randomly - EXAMPLE: 'hi sweet i love you' // use this.anniversary.length
+    console.log('Message added successfully.')
     this.messages.push(string)
   },
-
   generateMessage: function () { // randomly generates a message from your array
     var index = Math.floor(Math.random() * this.messages.length)
     return this.messages[index]
   },
 
   sendMessage: function () {
-    this.transporter.sendMail(this.mailOptions, function (error, info) {
+    this.transporter.sendMail(this.mailOpts(), function (error, info) {
       if (error) {
         console.log(error)
       } else {
@@ -68,9 +74,10 @@ var love = {
   }
 }
 
-// love.createMessage('hej kici')
-// love.createMessage('przytulkam cie')
-// love.createMessage('ale jestes fajna')
+love.createMessage('hej kici')
+love.createMessage('przytulkam cie')
+love.createMessage('ale jestes fajna')
+console.log(love.mailOpts())
 // love.sendMessage()
 
 //  TODO: i want it to be a cool app with an interface so maybe lets use react or angular
