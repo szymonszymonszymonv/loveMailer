@@ -16,5 +16,8 @@
     "node"
   ],
   "author": "Szymon Prokopiuk",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.5.2"
+  }
 }
