@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './App.css'
-import CreateMessage from './CreateMessage'
+import Message from './Message'
 
 class App extends Component {
   render () {
-    return <CreateMessage />
+    return <Message/>
   }
 }
 
