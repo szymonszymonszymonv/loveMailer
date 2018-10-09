@@ -1,9 +1,16 @@
 .box{
-  height: 40%;
-  width: 40%;
+  border: 1px solid blue;
+  padding: 5px;
 }
-.message{
-  height: 500px;
-  width: 300px;
-  border: 1px solid
+textarea{
+  font-family: inherit;
+  resize: none;
+  margin-left: 2px;
+  margin-top: 2px;
+  outline: none;
+  border-radius: 10px;
+  border-color: blue;
+}
+p{
+  text-align: center;
 }

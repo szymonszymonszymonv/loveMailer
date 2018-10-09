@@ -1,0 +1,34 @@
+.boxWithButton{
+  height:inherit;
+  position: relative;
+  display: flex;
+}
+.generateBox{
+  background-color:#FFF0F5;
+  display: block;
+  height: 218px;
+  overflow-y: scroll;
+  position: relative;
+  width: 400px;
+  margin-right: 5px;
+  margin-left:auto;
+  border: 1px solid red;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #FFF0F5;
+}
+li{
+  margin-top: 1em;
+  background-color:	#E6E6FA;
+}
+button.addMessage{
+  position: absolute;
+  bottom: -20px;
+  outline:none;
+  border: none;
+  border-radius: 7px;
+  background-color: LightCoral;
+}
