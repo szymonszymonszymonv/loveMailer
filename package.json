@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-plugin-react": "^7.11.1",
     "nodemailer": "^4.6.8",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
