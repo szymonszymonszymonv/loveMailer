@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CreateMessage from './CreateMessage'
 import GenerateMessage from './GenerateMessage'
+import './Message.css'
 class Message extends Component {
   constructor (props) {
     super(props)
@@ -22,7 +23,7 @@ class Message extends Component {
     this.setState({ messages })
   }
   render () {
-    return (<div><CreateMessage
+    return (<div className='message'><CreateMessage
       onMessageChange = {this.handleMessageChange}
       message = {this.state.message}
     />

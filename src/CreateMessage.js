@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CreateMessage.css'
 
 class CreateMessage extends Component {
   constructor (props) {
@@ -15,7 +16,7 @@ class CreateMessage extends Component {
     return (
       <div className='box'>
         <p>create a message!</p>
-        <textarea rows='10' cols='50' value={ message } onChange={ this.handleChange }></textarea>
+        <textarea rows='10' cols='50' placeholder='show your love' value={ message } onChange={ this.handleChange }></textarea>
         <br></br>
       </div>
     )

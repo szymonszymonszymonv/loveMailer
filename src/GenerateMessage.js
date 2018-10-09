@@ -1,15 +1,5 @@
 import React, { Component } from 'react'
-
-// const ListItem = ({ value, onClick }) => (
-//   <li onClick={onClick}>{value}</li>
-// )
-// const List = ({ items, onItemClick }) => (
-//   <ul>
-//     {
-//       items.map((item, i) => <ListItem key={i} value={item} onClick={onItemClick} />)
-//     }
-//   </ul>
-// )
+import './GenerateMessage.css'
 
 class GenerateMessage extends Component {
   constructor (props) {
@@ -24,12 +14,14 @@ class GenerateMessage extends Component {
   render () {
     let messages = this.props.messages
     return (
-      <div className='box'>
-        <p>your messages</p>
-        <ul>
-          {messages.map(function (i) { return <li key={i}>{i}</li> })}
-        </ul>
-        <button type='button' onClick={this.handleClick} value={this.props.message}>hej</button>
+      <div className='boxWithButton'>
+        <div className='generateBox'>
+          <p>your messages</p>
+          <ul>
+            {messages.map(function (i) { return <li key={i}>{i}</li> })}
+          </ul>
+        </div>
+        <button className='addMessage' type='button' onClick={this.handleClick} value={this.props.message}>add</button>
       </div>
     )
   }
