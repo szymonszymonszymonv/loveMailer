@@ -1,4 +1,3 @@
-#love
-NOTES TO SELF: after lots of research I realized that I need to learn some Express and backend stuff
+im confused i dont even know what its gonna be in the end
 
 WIP :)
