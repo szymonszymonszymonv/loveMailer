@@ -1,5 +1,8 @@
 .box{
-  border: 1px solid blue;
+  background-color:#FFF0F5;
+  border: 1px solid red;
+  border-radius: 8px;
+  color: #ff9999;
   padding: 5px;
 }
 textarea{
@@ -9,7 +12,9 @@ textarea{
   margin-top: 2px;
   outline: none;
   border-radius: 10px;
-  border-color: blue;
+  background-color:#FFF0F5;
+  border: 1px solid red;
+  color: #ff9999;
 }
 p{
   text-align: center;

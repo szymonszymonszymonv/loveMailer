@@ -13,22 +13,51 @@
   margin-right: 5px;
   margin-left:auto;
   border: 1px solid red;
+  border-radius: 8px;
+  color: #ff9999;
+}
+.messageValue{
+  display: flex;
+  border-bottom: 1px solid pink;
+  border-radius: 10px;
 }
 ul{
+  word-break: break-all;
   margin: 0;
   padding: 0;
   list-style-type: none;
   background-color: #FFF0F5;
 }
 li{
+  padding: 2px;
   margin-top: 1em;
-  background-color:	#E6E6FA;
+  background-color:	transparent;
+  color: tomato;
 }
 button.addMessage{
+  background-color:#FFF0F5;
+  color: #ff9999;
+  font-family: inherit;
   position: absolute;
   bottom: -20px;
   outline:none;
-  border: none;
+  border: 1px solid red;
   border-radius: 7px;
-  background-color: LightCoral;
+}
+button.delete{
+  color: tomato;
+  margin-top: inherit;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: color 1s;
+  transition: transform 0.5s;
+}
+button.delete:hover{
+  color: red;
+  transform: rotate(-45deg);
+}
+.fa-trash-alt{
+  color: inherit;
+  font-size: inherit;
 }
