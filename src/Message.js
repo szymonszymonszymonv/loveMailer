@@ -11,23 +11,39 @@ class Message extends Component {
     }
     this.handleMessageChange = this.handleMessageChange.bind(this)
     this.handleAddClick = this.handleAddClick.bind(this)
+    this.handleDelClick = this.handleDelClick.bind(this)
   }
+
   handleMessageChange (message) {
     this.setState({
       message: message
     })
   }
+
   handleAddClick () {
     let messages = this.state.messages
-    messages.push(this.state.message)
+    if (messages.indexOf(this.state.message) < 0) {
+      messages.push(this.state.message)
+      this.setState({ messages })
+    } else {
+      window.alert('przestan')
+    }
+    console.log(this.state)
+  }
+
+  handleDelClick (i, e) {
+    let messages = this.state.messages
+    let index = messages.indexOf(i)
+    messages.splice(index, 1)
     this.setState({ messages })
   }
+
   render () {
     return (<div className='message'><CreateMessage
       onMessageChange = {this.handleMessageChange}
       message = {this.state.message}
     />
-    <GenerateMessage messages={this.state.messages} onClick={this.handleAddClick} value = {this.state.message}/>
+    <GenerateMessage messages={this.state.messages} onClick={this.handleAddClick} onDelClick={this.handleDelClick}/>
     </div>
     )
   }
