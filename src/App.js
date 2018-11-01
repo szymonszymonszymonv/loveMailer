@@ -53,6 +53,7 @@ class App extends Component {
     this.setState({ messages })
   }
   handleSubmit (e) {
+    // it submits data to backend so we can use it to send an email
     e.preventDefault()
     let data = this.state
     console.log(data)

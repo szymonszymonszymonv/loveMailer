@@ -25,7 +25,7 @@ class GenerateMessage extends Component {
           <p>your messages</p>
           <ul>
             {
-              messages.map((i) => {
+              messages.map((i) => { // function to display messages
                 let boundItemClick = this.handleDelClick.bind(this, i)
                 return (
                   <div className='messageValue animated fadeIn'>

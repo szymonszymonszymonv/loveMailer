@@ -31,11 +31,13 @@ class Mailer {
     this.transporter = nodemailer.createTransport(this.config)
   }
 
-  generateMessage () { // randomly generates a message from your array of messages
+  generateMessage () {
+    // randomly generates a message from your array of messages
     var index = Math.floor(Math.random() * this.messages.length)
     return this.messages[index]
   }
   sendMessage () {
+    // it sends message using options from mailOpts
     this.transporter.sendMail(this.mailOpts(), function (error, info) {
       if (error) {
         console.log(error)
