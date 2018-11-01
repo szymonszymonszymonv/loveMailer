@@ -5,45 +5,29 @@ import './Message.css'
 class Message extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      message: '',
-      messages: []
-    }
     this.handleMessageChange = this.handleMessageChange.bind(this)
     this.handleAddClick = this.handleAddClick.bind(this)
     this.handleDelClick = this.handleDelClick.bind(this)
   }
 
   handleMessageChange (message) {
-    this.setState({
-      message: message
-    })
+    this.props.onMessageChange(message)
   }
 
-  handleAddClick () {
-    let messages = this.state.messages
-    if (messages.indexOf(this.state.message) < 0) {
-      messages.push(this.state.message)
-      this.setState({ messages })
-    } else {
-      window.alert('przestan')
-    }
-    console.log(this.state)
+  handleAddClick (message) {
+    this.props.onAddClick(message)
   }
 
   handleDelClick (i, e) {
-    let messages = this.state.messages
-    let index = messages.indexOf(i)
-    messages.splice(index, 1)
-    this.setState({ messages })
+    this.props.onDelClick(i, e)
   }
-
   render () {
+    var message = this.props.message
     return (<div className='message'><CreateMessage
       onMessageChange = {this.handleMessageChange}
-      message = {this.state.message}
+      message = {message}
     />
-    <GenerateMessage messages={this.state.messages} onClick={this.handleAddClick} onDelClick={this.handleDelClick}/>
+    <GenerateMessage messages={this.props.messages} onClick={this.handleAddClick} onDelClick={this.handleDelClick}/>
     </div>
     )
   }
